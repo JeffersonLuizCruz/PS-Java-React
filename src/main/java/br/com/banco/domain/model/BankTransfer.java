@@ -2,8 +2,7 @@ package br.com.banco.domain.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
-import java.util.List;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,9 +12,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import br.com.banco.domain.model.enums.AccountType;
 import lombok.AllArgsConstructor;
@@ -26,7 +28,7 @@ import lombok.Setter;
 
 @Getter @Setter @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor @AllArgsConstructor
-@Entity
+@Entity @Table(name = "transferencia")
 public class BankTransfer implements Serializable{
 	private static final long serialVersionUID = -1857930254503303570L;
 
@@ -35,8 +37,9 @@ public class BankTransfer implements Serializable{
 	private Long id;
 	
 	@CreationTimestamp
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	@Column(name = "data_transferencia", nullable = false)
-	private OffsetDateTime dateAt;
+	private LocalDate dateAt;
 	
 	@Column(name = "valor", nullable = false)
 	private BigDecimal value;
@@ -46,10 +49,10 @@ public class BankTransfer implements Serializable{
 	private AccountType AccountType;
 	
 	@Column(name = "nome_operador_transacao")
-	private String accountOperator;
+	private String operator;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "conta_id", nullable = false)
-	private List<BankAccount> bankAccount;
+	private BankAccount bankAccount;
 	
 }
