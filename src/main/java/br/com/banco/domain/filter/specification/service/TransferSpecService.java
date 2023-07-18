@@ -20,6 +20,6 @@ public interface TransferSpecService {
 		
 		private String dateMin;
 		private String dateMax;
-		private String nameOperator;
+		private String owner;
 	}
 }

@@ -46,13 +46,15 @@ public class BankTransfer implements Serializable{
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "tipo", nullable = false)
-	private AccountType AccountType;
+	private AccountType accountType;
 	
 	@Column(name = "nome_operador_transacao")
 	private String operator;
 	
+	private BigDecimal totalBalance = BigDecimal.ZERO;
+	
 	@ManyToOne
 	@JoinColumn(name = "conta_id", nullable = false)
 	private BankAccount bankAccount;
-	
+
 }

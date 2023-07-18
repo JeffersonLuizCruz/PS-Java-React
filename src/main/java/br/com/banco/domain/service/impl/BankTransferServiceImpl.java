@@ -31,7 +31,7 @@ public class BankTransferServiceImpl implements BankTransferService, TransferSpe
 	public List<BankTransfer> filterTransfer(FilterTransfer filter) {
 		Specification<BankTransfer> specs = Specification.where((root, query, cb) -> cb.conjunction());
 		
-		if(StringUtils.hasText(filter.getNameOperator())) {
+		if(StringUtils.hasText(filter.getOwner())) {
 			specs = specs.and(TransferSpec.nameLike(filter));
 		}
 		
@@ -39,7 +39,9 @@ public class BankTransferServiceImpl implements BankTransferService, TransferSpe
 	    LocalDate dateMax = parseLocalDate(filter.getDateMax());
 		specs = specs.and(TransferSpec.dateBetween(dateMin, dateMax));
 		
-		return transferRepository.findAll(specs);
+		List<BankTransfer> transfers = transferRepository.findAll(specs);
+		
+        return transfers;
 	}
 	
 	private LocalDate parseLocalDate(String dateStr) {

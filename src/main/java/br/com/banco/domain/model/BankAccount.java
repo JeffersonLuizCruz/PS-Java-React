@@ -1,6 +1,7 @@
 package br.com.banco.domain.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,4 +29,8 @@ public class BankAccount implements Serializable{
 	
 	@Column(name = "nome_responsavel", nullable = false)
 	private String owner;
+	
+	public BigDecimal getTotal() {
+		return new BigDecimal("100.00");
+	}
 }
