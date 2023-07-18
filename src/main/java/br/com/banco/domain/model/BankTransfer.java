@@ -56,26 +56,4 @@ public class BankTransfer implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "conta_id", nullable = false)
 	private BankAccount bankAccount;
-	
-	public void addtotalBalance(LocalDate dateMin, LocalDate dateMax) {
-		BigDecimal totalBalance = BigDecimal.ZERO;
-		BigDecimal total = BigDecimal.ZERO;
-		
-		if(isWithinDateRange(dateAt, dateMin, dateMax) || this.operator == null) {
-			totalBalance = totalBalance.add(getValue());
-			setTotalBalance(totalBalance);
-		}
-		total = total.add(getValue());
-		setTotalBalance(total);
-	}
-	
-    private boolean isWithinDateRange(LocalDate date, LocalDate startDate, LocalDate endDate) {
-    	boolean isResult = false;
-    	try {
-    		 return isResult = !date.isBefore(startDate) && !date.isAfter(endDate);
-		} catch (NullPointerException e) {
-			// TODO: handle exception
-		}
-       return isResult;
-    }
 }
