@@ -56,4 +56,5 @@ public class BankTransfer implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "conta_id", nullable = false)
 	private BankAccount bankAccount;
+
 }

@@ -39,7 +39,9 @@ public class BankTransferServiceImpl implements BankTransferService, TransferSpe
 	    LocalDate dateMax = parseLocalDate(filter.getDateMax());
 		specs = specs.and(TransferSpec.dateBetween(dateMin, dateMax));
 		
-        return transferRepository.findAll(specs);
+		List<BankTransfer> transfers = transferRepository.findAll(specs);
+		
+        return transfers;
 	}
 	
 	private LocalDate parseLocalDate(String dateStr) {
