@@ -29,13 +29,13 @@ public class BankTransferController {
 	
 	@GetMapping
 	public ResponseEntity<List<BankTransfer>> filterTransfer(
-	        @RequestParam(name = "operator", required = false) String operator,
+	        @RequestParam(name = "owner", required = false) String owner,
 	        @RequestParam(name = "dateMin", required = false) String dateMin,
 	        @RequestParam(name = "dateMax", required = false) String dateMax
 	) {
 
 	    FilterTransfer filter = FilterTransfer.builder()
-	            .nameOperator(operator)
+	            .owner(owner)
 	            .dateMin(dateMin)
 	            .dateMax(dateMax)
 	            .build();
