@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 public interface TransferSpecService {
-	List<BankTransfer> filterTransfer(FilterTransfer filter);
+	List<BankTransfer> filterTransfers(FilterTransfer filter);
 	
 	@Builder
 	@Getter @Setter @NoArgsConstructor @AllArgsConstructor

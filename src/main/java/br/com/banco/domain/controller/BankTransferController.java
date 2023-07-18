@@ -40,8 +40,9 @@ public class BankTransferController {
 	            .dateMax(dateMax)
 	            .build();
 
-	    List<BankTransfer> filterTransfer = bankTransferService.filterTransfer(filter);
-	    return ResponseEntity.ok().body(filterTransfer);
+	    // TODO - Adicionar paginação 
+	    List<BankTransfer> filterTransfers = bankTransferService.filterTransfers(filter);
+	    return ResponseEntity.ok().body(filterTransfers);
 	}
 
 }

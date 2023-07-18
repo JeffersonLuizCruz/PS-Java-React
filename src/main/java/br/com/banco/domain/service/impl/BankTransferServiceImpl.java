@@ -28,7 +28,7 @@ public class BankTransferServiceImpl implements BankTransferService, TransferSpe
 	}
 
 	@Override
-	public List<BankTransfer> filterTransfer(FilterTransfer filter) {
+	public List<BankTransfer> filterTransfers(FilterTransfer filter) {
 		Specification<BankTransfer> specs = Specification.where((root, query, cb) -> cb.conjunction());
 		
 		if(StringUtils.hasText(filter.getOwner())) {
@@ -53,6 +53,7 @@ public class BankTransferServiceImpl implements BankTransferService, TransferSpe
 	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	        return LocalDate.parse(dateStr.replace("/", "-"), formatter);
 	    } catch (DateTimeParseException e) {
+	    	// TODO - Criar uma exception personalizada
 	        // Tratar caso a data fornecida não esteja em formato válido
 	        // Pode ser lançada uma exceção, retornar null ou tomar outra ação apropriada
 	        e.printStackTrace();
