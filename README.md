@@ -21,6 +21,8 @@
 
 - Possuir a JDK 11 
 - Uma IDE ou editor de sua preferência
+## Carregar endpoints no Postman
+Link: https://www.postman.com/aviation-specialist-65266356/workspace/supera/collection/19265412-69c02df8-f50c-443d-9aed-33052f266770
 
 ## Requisitos do Projeto
 
