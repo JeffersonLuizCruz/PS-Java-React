@@ -17,7 +17,7 @@ import br.com.banco.domain.repository.BankTransferRepository;
 import br.com.banco.domain.service.BankTransferService;
 import lombok.AllArgsConstructor;
 
-@AllArgsConstructor @Service
+@AllArgsConstructor @Service 
 public class BankTransferServiceImpl implements BankTransferService, TransferSpecService{
 
 	@Autowired private final BankTransferRepository transferRepository;

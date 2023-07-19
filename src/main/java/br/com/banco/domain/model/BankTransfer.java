@@ -21,11 +21,13 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import br.com.banco.domain.model.enums.AccountType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Builder
 @Getter @Setter @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor @AllArgsConstructor
 @Entity @Table(name = "transferencia")
