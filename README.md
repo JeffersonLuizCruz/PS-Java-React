@@ -4,7 +4,8 @@
 
 - Este teste consiste em construir uma camada de serviço, para uma operação muito realizada em bancos, para emissão de extrato bancário.
 
-
+## Carregar endpoints no Postman
+Link: https://www.postman.com/aviation-specialist-65266356/workspace/supera/collection/19265412-69c02df8-f50c-443d-9aed-33052f266770
 ## Como executar a aplicação 
 
 - Você pode executar a aplicação da maneira que quiser e utilizando a IDE de sua preferência. 
@@ -21,8 +22,6 @@
 
 - Possuir a JDK 11 
 - Uma IDE ou editor de sua preferência
-## Carregar endpoints no Postman
-Link: https://www.postman.com/aviation-specialist-65266356/workspace/supera/collection/19265412-69c02df8-f50c-443d-9aed-33052f266770
 
 ## Requisitos do Projeto
 
